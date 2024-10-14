@@ -96,12 +96,12 @@ namespace lab2_2
             return mt1.TimeSinceMidnight() - mt2.TimeSinceMidnight();
         }
 
-        public static string WhatLesson(MyTime time)
+        public string WhatLesson()
         {
             string[] lessons = { "1-ша", "2-га", "3-я", "4-а", "5-а", "6-а" };
             int tp = 8 * 3600;
             int tk = tp + 3600 + 20 * 60;
-            int tCur = time.TimeSinceMidnight();
+            int tCur = this.TimeSinceMidnight();
             if (tCur < tp)
                 return "Пари ще не почалися";
             for (int i = 0; i < lessons.Length; i++)
@@ -124,7 +124,7 @@ namespace lab2_2
         {
 
             MyTime t = new MyTime(16, 10, 0);
-            Console.WriteLine(MyTime.WhatLesson(t));
+            Console.WriteLine(t.WhatLesson());
             /*            MyTime t = new MyTime(23, 59, 59);
                         Console.WriteLine(t);
                         Console.WriteLine(t.AddOneSecond());
